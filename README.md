@@ -86,7 +86,7 @@ Open your browser and go to http://localhost:8000 to see the application in acti
 
  Ensure that your CSS file (e.g., styles.css) is placed in the public directory for proper linking in your views. Link it in your Blade files like this:
 
-   - <link rel="stylesheet" href="{{ asset('styles.css') }}">
+   <!-- - <link rel="stylesheet" href="{{ asset('styles.css') }}"> -->
 
 **Blade Files**:
 
