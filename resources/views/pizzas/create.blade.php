@@ -1,5 +1,5 @@
 {{-- @extends('layout') --}}
-
+<link rel="stylesheet" href="{{ asset('form.css') }}">
 @section('content')
 <h1>Add a new order</h1>
 <form method="POST" action="{{ route('pizzas.store') }}">
