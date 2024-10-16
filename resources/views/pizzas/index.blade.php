@@ -12,16 +12,20 @@
     <ul>
         @foreach ($pizzas as $pizza)
             <li>{{ $pizza->name }} {{ $pizza->address }} {{ $pizza->telephone }}
-                <button><a href="{{ route('pizzas.edit', $pizza->id) }}">Edit order</a></button>
-                <form action="{{ route('pizzas.destroy', $pizza->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar esta pizza?');">
+                <button><a href="{{ route('pizzas.edit', $pizza->id) }}">Edit your order</a></button>
+                <form action="{{ route('pizzas.destroy', $pizza->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure to eliminate your order?');">
                     @csrf
                     @method('DELETE')
-                    <button type="submit">Delete</button>
+                    <button type="submit">Delete your order</button>
                 </form>
             </li>
         @endforeach
     </ul>
 
-    <button><a href="{{ route('pizzas.create') }}">Create Pizza</a></button>
+    <div class="button-container">
+        <button><a href="{{ route('pizzas.create') }}">Add your order</a></button>
+        <button><a href="{{ route('home')}}">Home page</a></button>
+    </div>
+    
 </body>
 </html>

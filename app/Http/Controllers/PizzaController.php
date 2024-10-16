@@ -44,31 +44,26 @@ class PizzaController extends Controller
 
     public function update(Request $request, $id)
 {
-    // Validación de los datos entrantes
+
     $request->validate([
         'name' => 'required|string|max:255',
         'address' => 'required|string|max:255',
         'telephone' => 'required|string|max:20',
     ]);
 
-    // Buscar la pizza por ID
     $pizza = Pizza::find($id);
 
-    // Comprobar si la pizza existe
     if (!$pizza) {
-        return redirect()->route('pizzas.index')->with('error', 'Pizza no encontrada');
+        return redirect()->route('pizzas.index')->with('error', 'Pizza not found');
     }
 
-    // Actualizar los atributos de la pizza
     $pizza->name = $request->input('name');
     $pizza->address = $request->input('address');
     $pizza->telephone = $request->input('telephone');
     
-    // Guardar los cambios en la base de datos
     $pizza->save();
 
-    // Redirigir al índice con un mensaje de éxito
-    return redirect()->route('pizzas.index')->with('success', 'Pizza actualizada correctamente');
+    return redirect()->route('pizzas.index')->with('success', 'Pizza update correctly');
 }
 
     public function show($id)
@@ -76,7 +71,7 @@ class PizzaController extends Controller
     $pizza = Pizza::find($id);
 
     if (!$pizza) {
-        return redirect()->route('pizzas.index')->with('error', 'Pizza no encontrada');
+        return redirect()->route('pizzas.index')->with('error', 'Pizza not found');
     }
 
       return view('pizzas.show', compact('pizza'));
@@ -87,12 +82,12 @@ class PizzaController extends Controller
         $pizza = Pizza::find($id);
 
         if (!$pizza) {
-            return redirect()->route('pizzas.index')->with('error', 'Pizza no encontrada');
+            return redirect()->route('pizzas.index')->with('error', 'Pizza not found');
         }
 
         $pizza->delete();
 
-        return redirect()->route('pizzas.index')->with('success', 'Pizza eliminada correctamente');
+        return redirect()->route('pizzas.index')->with('success', 'Pizza delet correctly');
     }
 
 }

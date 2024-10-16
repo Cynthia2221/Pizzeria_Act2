@@ -11,6 +11,10 @@ body {
     color: #b71c1c; 
 }
 
+h1{
+    text-align: center;
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -51,6 +55,14 @@ a:hover {
     text-decoration: underline;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button-container button{
+    margin: 20px;
+}
 
 @media (max-width: 768px) {
     body {

@@ -15,6 +15,6 @@
 
     <button><a href="{{ route('pizzas.index') }}">Back to the list</a></button>
 
-    <button><a href="{{ route('pizzas.edit', $pizza->id) }}">Edit Pizza</a></button>
+    <button><a href="{{ route('pizzas.edit', $pizza->id) }}">Edit your order</a></button>
 </body>
 </html>
